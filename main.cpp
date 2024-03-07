@@ -10,10 +10,8 @@
 
 int main() {
 
-	Database db("employee.db");
-
-	if (!db.open()) {
-		std::cerr << "Error opening database: " << db.getError() << std::endl;
+	if (!Database::getInstance().open("employee.db")) {
+		std::cerr << "Error opening database: " << Database::getInstance().getError() << std::endl;
 		return 1;
 	}
 
@@ -40,31 +38,31 @@ int main() {
 		switch (choice) {
 		case 1:
 		{
-			Employee e1(db);
+			Employee e1;
 			e1.action();
 		}
 		break;
 		case 2:
 		{
-			Department d1(db);
+			Department d1;
 			d1.action();
 		}
 		break;
 		case 3:
 		{
-			Salary s1(db);
+			Salary s1;
 			s1.action();
 		}
 		break;
 		case 4:
 		{
-			Engineer en1(db);
+			Engineer en1;
 			en1.action();
 		}
 		break;
 		case 5:
 		{
-			Manager m1(db);
+			Manager m1;
 			m1.action();
 		}
 		break;
@@ -76,8 +74,8 @@ int main() {
 			break;
 		}
 	}
-
-	db.close();
+	std::cout << "after talbe choices\n";
+	Database::getInstance().close();
 
 	return 0;
 }

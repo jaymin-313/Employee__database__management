@@ -8,9 +8,6 @@
 class Department {
 public:
     Department() = default;
-    Department(Database& db) {
-        db_department = db;
-    }
 
     int getId() const { return id; }
     std::string getName() const { return name; }
@@ -31,7 +28,7 @@ public:
 
 private:
 
-    Database db_department;
+  
     int id{};
     std::string name{};
     int manager_id{};

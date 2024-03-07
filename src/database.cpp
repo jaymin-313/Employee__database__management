@@ -4,13 +4,17 @@
 #include <iostream>
 
 int Database::rows = 0;
-bool Database::open() {
-    if (sqlite3_open(dbName.c_str(), &db) == SQLITE_OK) {
+bool Database::open(std::string db_name) {
+    if (sqlite3_open(db_name.c_str(), &db) == SQLITE_OK) {
 
         if (!createTables()) {
             return false;
         }
 
+      /*  std::string pragmaQuery = { "PRAGMA foreign_keys = ON;" };
+        executeQuery(pragmaQuery);*/
+
+        std::cout << "Opened\n";
         return true;
     }
     else {
@@ -100,6 +104,7 @@ bool Database::createTables() {
 
 void Database::close() {
     if (db) {
+        std::cout << "sqlite3 closed\n";
         sqlite3_close(db);
         db = nullptr;
     }

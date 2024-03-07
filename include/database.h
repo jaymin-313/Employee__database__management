@@ -5,17 +5,16 @@
 
 class Database {
 public:
-    sqlite3* db;
-    Database() = default;
-    Database(const std::string& db) :dbName(db) {}
+    sqlite3* db{};
 
-    ~Database() {
-        close();
-    }
-
-    bool open();
+    bool open(std::string);
     bool createTables();
     void close();
+
+    static Database& getInstance() {
+        static Database DB;
+        return DB;
+    }
 
     bool executeQuery(const std::string& query);
     bool executeQueryCallback(const std::string& query);
@@ -23,12 +22,19 @@ public:
     void setError(const std::string& errorMessage);
 
 private:
-    /*sqlite3* db;*/
+    Database() {}
+    ~Database() {
+        //sqlite3_close(db);
+        close();
+    }
+    Database(const Database&) = delete;
+    Database& operator=(const Database&) = delete;
+
     std::string dbName{};
     std::string Error{};
     static int rows;
     static int callback(void* data, int argc, char** argv, char** azColName);
-    
+
 };
 
 

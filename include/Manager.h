@@ -5,9 +5,7 @@
 class Manager : public Employee {
 public:
     Manager() = default;
-    Manager(const Database& db) {
-        manager_db = db;
-    }
+ 
    /* Manager(int id, const std::string& firstname, const std::string& lastname, const std::string& dob,
         const std::string& mobile, const std::string& email, const std::string& address,
         Gender gender, const std::string& doj, float salary, const std::string& w_location,
@@ -20,8 +18,8 @@ public:
     int getManagementExperience() const { return management_experience; }
     std::string getProjectTitle() const { return project_title; }
 
-    void setManagementExperience(int ManagementExperience) { management_experience = ManagementExperience; }
-    void setProjectTitle(const std::string& ProjectTitle) { project_title = ProjectTitle; }
+    void setManagementExperience();
+    void setProjectTitle();
 
     void insertManager();
     void deleteManager();
@@ -31,7 +29,7 @@ public:
     void action();
 
 private:
-    Database manager_db;
+
     int management_experience{};
     std::string project_title{};
 };

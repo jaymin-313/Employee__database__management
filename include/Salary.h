@@ -9,9 +9,7 @@ class Salary {
 public:
 
     Salary() = default;
-    Salary(Database& db) {
-        db_salary = db;
-    }
+
 
     int getId() const { return id; }
     float getAmount() const { return amount; }
@@ -32,7 +30,7 @@ public:
 
 private:
 
-    Database db_salary;
+
     int id{};
     float amount{};
     float base_salary{};

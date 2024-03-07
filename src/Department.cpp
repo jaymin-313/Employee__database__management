@@ -32,10 +32,10 @@ void Department::insertDepartment() {
 		std::to_string(manager_id) + "', '" +
 		description + "');";
 
-	if (db_department.executeQuery(insertQuery))
+	if (Database::getInstance().executeQuery(insertQuery))
 		std::cout << "Inserted Department Succesfully ! \n";
 	else
-		std::cout << db_department.getError() << "\n";
+		std::cout << Database::getInstance().getError() << "\n";
 
 };
 void Department::deleteDepartment() {
@@ -73,9 +73,9 @@ void Department::deleteDepartment() {
 		break;
 	}
 
-	if (db_department.executeQuery(deleteQuery)) {
+	if (Database::getInstance().executeQuery(deleteQuery)) {
 
-		int changes = sqlite3_changes(db_department.db);
+		int changes = sqlite3_changes(Database::getInstance().db);
 
 		std::cout << changes << " row affected \n\n";
 		if (changes != 0) {
@@ -84,7 +84,7 @@ void Department::deleteDepartment() {
 
 	}
 	else
-		std::cout << db_department.getError() << "\n";
+		std::cout << Database::getInstance().getError() << "\n";
 
 };
 void Department::updateDepartment() {
@@ -125,9 +125,9 @@ void Department::updateDepartment() {
 		break;
 	}
 
-	if (db_department.executeQuery(updateQuery)) {
+	if (Database::getInstance().executeQuery(updateQuery)) {
 
-		int changes = sqlite3_changes(db_department.db);
+		int changes = sqlite3_changes(Database::getInstance().db);
 
 		std::cout << changes << " row affected \n\n";
 		if (changes != 0) {
@@ -136,7 +136,7 @@ void Department::updateDepartment() {
 
 	}
 	else
-		std::cout << db_department.getError() << "\n";
+		std::cout << Database::getInstance().getError() << "\n";
 
 };
 void Department::viewDepartment() {
@@ -176,8 +176,8 @@ void Department::viewDepartment() {
 		break;
 	}
 
-	if (!db_department.executeQueryCallback(selectQuery)) {
-		std::cout << db_department.getError() << std::endl;
+	if (!Database::getInstance().executeQueryCallback(selectQuery)) {
+		std::cout << Database::getInstance().getError() << std::endl;
 	}
 
 };
