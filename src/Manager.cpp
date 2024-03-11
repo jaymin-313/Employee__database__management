@@ -38,20 +38,16 @@ void Manager::insertManager() {
 };
 void Manager::deleteManager() {
     setId();
-    std::string deleteQuery = "DELETE FROM Manager WHERE id = " + std::to_string(getId());
+    std::string checkManager = "SELECT id FROM Manager WHERE id = " + std::to_string(getId());
 
-    if (Database::getInstance().executeQuery(deleteQuery)) {
-
-        int changes = sqlite3_changes(Database::getInstance().db);
-
-        std::cout << changes << " row affected \n\n";
-        if (changes != 0) {
-            std::cout << "Manager Deleted Succesfully ! \n\n";
-        }
-
+    if (!Database::getInstance().executeQueryCallback(checkManager)) {
+        std::cout << Database::getInstance().getError() << std::endl;
     }
+
+    if (int rows = Database::getInstance().getRow(); rows > 0)
+        deleteEmployeeById(getId());
     else
-        std::cout << Database::getInstance().getError() << "\n";
+        std::cout << "Manager Not exist" << "\n\n";
 };
 void Manager::updateManager() {
     int choice;
@@ -135,11 +131,11 @@ void Manager::viewManager() {
 
     switch (choice) {
     case 1:
-        selectQuery = "SELECT * FROM Manager";
+        selectQuery = "SELECT * FROM Employee NATURAL JOIN Manager WHERE Employee.id==Manager.id ";
         break;
     case 2:
         setId();
-        selectQuery = "SELECT * FROM Manager WHERE id = " + std::to_string(getId());
+        selectQuery = "SELECT * FROM Employee NATURAL JOIN Manager WHERE Employee.id==Manager.id AND Employee.id =" + std::to_string(getId());
         break;
     case 3:
         break;

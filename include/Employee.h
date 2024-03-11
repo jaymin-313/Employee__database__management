@@ -44,7 +44,7 @@ public:
     void setDepartmentId();
 
     void insertEmployee();
-    void deleteEmployee();
+    void deleteEmployeeById(int id);
     void updateEmployee();
     void viewEmployee();
 

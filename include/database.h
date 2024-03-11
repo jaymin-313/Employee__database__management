@@ -18,6 +18,7 @@ public:
 
     bool executeQuery(const std::string& query);
     bool executeQueryCallback(const std::string& query);
+    int getRow();
     std::string getError() const;
     void setError(const std::string& errorMessage);
 

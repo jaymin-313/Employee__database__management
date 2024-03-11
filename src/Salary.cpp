@@ -127,11 +127,11 @@ void Salary::viewSalary() {
 
 	switch (choice) {
 	case 1:
-		selectQuery = "SELECT * FROM Salary";
+		selectQuery = "SELECT id,firstname,lastname,email,amount,base_salary,bonus From Employee NATURAL JOIN Salary";
 		break;
 	case 2:
 		setId();
-		selectQuery = "SELECT * FROM Salary WHERE id = " + std::to_string(getId());
+		selectQuery = "SELECT id,firstname,lastname,email,amount,base_salary,bonus From Employee NATURAL JOIN Salary WHERE id = " + std::to_string(getId());
 		break;
 	case 3:
 		break;

@@ -142,7 +142,9 @@ bool Database::executeQueryCallback(const std::string& query) {
     }
     return true;
 }
-
+int Database::getRow() {
+    return rows;
+}
 
 int Database::callback(void* data, int argc, char** argv, char** azColName) {
     ++rows;

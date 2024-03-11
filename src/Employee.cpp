@@ -131,60 +131,43 @@ void Employee::insertEmployee() {
 		std::cout << Database::getInstance().getError() << "\n";
 	
 };
-void Employee::deleteEmployee() {
+void Employee::deleteEmployeeById(int id) {
 
 	std::string deleteQuery{};
 
-	int choice;
 
-	std::cout << "Please select a column to delete an employee:\n";
-	std::cout << "1. ID\n";
-	std::cout << "2. Firstname\n";
-	std::cout << "3. Email\n";
-	std::cout << "4. Exit\n";
+	std::string viewEmployee = "SELECT id,firstname,lastname,email FROM Employee WHERE id = " + std::to_string(id);
 
-	std::cout << "Enter your choice (1-4): ";
-
-
-	std::cin >> choice;
-	std::cout << "\n";
-
-	switch (choice) {
-	case 1:
-		setId();
-		deleteQuery = "DELETE FROM Employee WHERE id = " + std::to_string(getId());
-		break;
-	case 2:
-		setFirstname();
-		deleteQuery = "DELETE FROM Employee WHERE firstname = '" + getFirstname() + "'";
-		break;
-
-	case 3:
-		setEmail();
-		deleteQuery = "DELETE FROM Employee WHERE email = '" + getEmail() + "'";
-		break;
-
-	case 4:
-		break;
-	default:
-		std::cout << "Invalid choice. Please enter a number between 1 and 4.\n";
-		deleteEmployee();
-		break;
+	if (!Database::getInstance().executeQueryCallback(viewEmployee)) {
+		std::cout << Database::getInstance().getError() << std::endl;
 	}
 
-	if (Database::getInstance().executeQuery(deleteQuery)) {
+	std::cout << "Enter Y: to delete this Employee\nEnter N: to exit\n\n";
+	char confirm;
+	std::cin >> confirm;
 
-		int changes = sqlite3_changes(Database::getInstance().db);
+	if (confirm == 'Y' || confirm == 'y') {
 
-		std::cout << changes << " row affected \n\n";
-		if (changes != 0) {
-			std::cout << "Employee Deleted Succesfully ! \n";
+		deleteQuery = "DELETE FROM Employee WHERE id = " + std::to_string(id);
+
+		if (Database::getInstance().executeQuery(deleteQuery)) {
+
+			int changes = sqlite3_changes(Database::getInstance().db);
+
+			std::cout << changes << " row affected \n\n";
+			if (changes != 0) {
+				std::cout << "Employee Deleted Succesfully ! \n\n";
+			}
+
 		}
-
+		else {
+			std::string errmsg = "FOREIGN KEY constraint failed";
+			if (Database::getInstance().getError() == errmsg) {
+				Database::getInstance().setError("Selected Employee is managing different employees, so you can not directly delete this employee !!! ");
+			}
+			std::cout << Database::getInstance().getError() << "\n\n";
+		}
 	}
-	else
-		std::cout << Database::getInstance().getError() << "\n";
-
 
 };
 
@@ -358,7 +341,7 @@ void Employee::action() {
 			insertEmployee();
 			break;
 		case 2:
-			deleteEmployee();
+			deleteEmployeeById(id);
 			break;
 		case 3:
 			updateEmployee();
