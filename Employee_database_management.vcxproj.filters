@@ -71,5 +71,8 @@
     <ClInclude Include="include\validate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\menu_controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

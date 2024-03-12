@@ -9,6 +9,7 @@ public:
 
     bool open(std::string);
     bool createTables();
+    std::string generateCreateTableQuery();
     void close();
 
     static Database& getInstance() {
