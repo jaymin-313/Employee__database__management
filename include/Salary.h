@@ -26,6 +26,8 @@ public:
     void updateSalary();
     void viewSalary();
 
+    void describeSalary();
+
     void action();
 
 private:

@@ -1,0 +1,2 @@
+[ 19-03-2024 16:24:05 ][Info ]: Opened Database Succesfully 
+[ 19-03-2024 16:24:12 ][Info ]: Database Closed. 

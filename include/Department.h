@@ -24,6 +24,8 @@ public:
     void updateDepartment();
     void viewDepartment();
 
+    void describeDepartment();
+
     void action();
 
 private:

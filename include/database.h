@@ -2,7 +2,9 @@
 #include "../sqlite/sqlite3.h"
 #include<string>
 #include<vector>
+#include "log.h"
 
+using logs::Log;
 class Database {
 public:
     sqlite3* db{};
@@ -22,6 +24,14 @@ public:
     int getRow();
     std::string getError() const;
     void setError(const std::string& errorMessage);
+
+    void export_to_csv(const std::string& table, const std::string& filename);
+
+    bool import_from_csv(const std::string& table, const std::string& filename);
+
+   
+
+
 
 private:
     Database() {}

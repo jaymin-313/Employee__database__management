@@ -1,5 +1,6 @@
 #include "../include/Engineer.h"
-
+#include "../include/log.h"
+using logs::Log;
 void Engineer::setProgrammingLanguage()
 {
     std::cout << "Enter Programming Language (seperated by comma if multiple) : \n";
@@ -15,20 +16,24 @@ void Engineer::setSpecialization()
 
 void Engineer::insertEngineer() {
 
-    insertEmployee();
-    setProgrammingLanguage();
-    setSpecialization();
+    if (insertEmployee()) {
 
-    std::string insertQueryEngineer = "INSERT INTO Engineer (id, programming_language,specialization) VALUES ("
-        + std::to_string(getId()) + ", '" +
-        programming_language + "', '" +
-        specialization + "'" +
-        ");";
+        setProgrammingLanguage();
+        setSpecialization();
 
-    if (Database::getInstance().executeQuery(insertQueryEngineer))
-        std::cout << "Inserted Engineer Succesfully ! \n\n";
-    else
-        std::cout << Database::getInstance().getError() << "\n\n";
+        std::string insertQueryEngineer = "INSERT INTO Engineer (id, programming_language,specialization) VALUES ("
+            + std::to_string(getId()) + ", '" +
+            programming_language + "', '" +
+            specialization + "'" +
+            ");";
+
+        if (Database::getInstance().executeQuery(insertQueryEngineer)) {
+            std::cout << "Inserted Engineer Succesfully ! \n\n";
+            Log::getInstance().Info("Engineer Inserted for id : ", getId());
+        }
+        else
+            std::cout << Database::getInstance().getError() << "\n\n";
+    }
 
 };
 
@@ -107,6 +112,8 @@ void Engineer::updateEngineer() {
         break;
     default:
         std::cout << "Invalid choice Please Enter a number 1 or 2 only\n";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         break;
     }
 
@@ -140,6 +147,8 @@ void Engineer::viewEngineer() {
         break;
     default:
         std::cout << "Invalid choice. Please enter a number between 1 and 3.\n";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         viewEngineer();
         break;
     }
@@ -150,7 +159,14 @@ void Engineer::viewEngineer() {
 
 };
 
+void Engineer::describeEngineer()
+{
 
+    if (!Database::getInstance().executeQueryCallback("pragma table_info('Engineer');")) {
+        std::cout << Database::getInstance().getError();
+    }
+
+}
 void Engineer::action() {
     bool flag = true;
     int choice;
@@ -164,8 +180,10 @@ void Engineer::action() {
         std::cout << "2. Delete\n";
         std::cout << "3. Update\n";
         std::cout << "4. View\n";
-        std::cout << "5. Exit\n";
-        std::cout << "Enter your choice (1-5): ";
+        std::cout << "5. Describe\n";
+        std::cout << "6. Restore old data\n";
+        std::cout << "7. Exit\n";
+        std::cout << "Enter your choice (1-7): ";
 
 
         std::cin >> choice;
@@ -184,10 +202,19 @@ void Engineer::action() {
             viewEngineer();
             break;
         case 5:
+            describeEngineer();
+            break;
+        case 6:
+            Database::getInstance().import_from_csv("Engineer", "Engineer.csv");
+            std::cout << "Engineer data restored from file\n";
+            break;
+        case 7:
             flag = false;
             break;
         default:
-            std::cerr << "Invalid choice. Please enter a number between 1 and 5.\n";
+            std::cerr << "Invalid choice. Please enter a number between 1 and 7.\n";
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             break;
         }
     }

@@ -1,21 +1,61 @@
 #include "../include/Department.h"
-//#include "../include/validate.h"
+#include "../include/log.h"
+#include "../include/validate.h"
+using logs::Log;
+
 void Department::setId() {
-	std::cout << "Dept. Id: ";
-	std::cin >> id;
+	std::cout << "Enter Department Id: ";
+	std::string inputValidate;
+	std::cin >> inputValidate;
+	if (validateNumeric(inputValidate)) {
+		id = std::stoi(inputValidate);
+	}
+	else {
+		std::cout << "Wrong Input!\n";
+		setId();
+	}
 }
 void Department::setName() {
-	std::cout << "Dept.Name: ";
-	std::cin >> name;
+	std::cout << "Enter Department Name: ";
+
+	std::string inputValidate;
+	std::cin.ignore();
+	std::getline(std::cin, inputValidate);
+	if (validateAlphabetic(inputValidate)) {
+		name = inputValidate;
+	}
+	else {
+		std::cout << "Wrong Input!\n";
+		setName();
+	}
 }
 void Department::setManagerId() {
-	std::cout << "Dept.ManagerId: ";
-	std::cin >> manager_id;
+	std::cout << "Enter Department ManagerId: ";
+
+	std::string inputValidate;
+	std::cin >> inputValidate;
+	if (validateNumeric(inputValidate)) {
+		manager_id = std::stoi(inputValidate);
+	}
+	else {
+		std::cout << "Wrong Input!\n";
+		setManagerId();
+	}
 }
 void Department::setDescription() {
-	std::cout << "Dept. Description: ";
+	std::cout << "Enter Department Description: ";
+	std::string inputValidate;
+
 	std::cin.ignore();
-	std::getline(std::cin, description);
+	std::getline(std::cin, inputValidate);
+
+	if (validateAlphabetic(inputValidate)) {
+		description = inputValidate;
+	}
+	else {
+		std::cout << "Wrong Input!\n";
+		setDescription();
+	}
 
 }
 
@@ -32,8 +72,11 @@ void Department::insertDepartment() {
 		std::to_string(manager_id) + "', '" +
 		description + "');";
 
-	if (Database::getInstance().executeQuery(insertQuery))
+	if (Database::getInstance().executeQuery(insertQuery)) {
+
 		std::cout << "Inserted Department Succesfully ! \n";
+		Log::getInstance().Info("Department Inserted for id : ", id);
+	}
 	else
 		std::cout << Database::getInstance().getError() << "\n";
 
@@ -181,7 +224,17 @@ void Department::viewDepartment() {
 	}
 
 };
+void Department::describeDepartment()
+{
 
+	if (!Database::getInstance().executeQueryCallback("pragma table_info('Department');")) {
+		std::cout << Database::getInstance().getError();
+	}
+	else {
+		Log::getInstance().Info("Department Described.");
+	}
+
+}
 
 void Department::action() {
 	bool flag = true;
@@ -193,8 +246,10 @@ void Department::action() {
 		std::cout << "2. Delete\n";
 		std::cout << "3. Update\n";
 		std::cout << "4. View\n";
-		std::cout << "5. Exit\n";
-		std::cout << "Enter your choice (1-5): ";
+		std::cout << "5. Describe\n";
+		std::cout << "6. Restore old data\n";
+		std::cout << "7. Exit\n";
+		std::cout << "Enter your choice (1-6): ";
 
 		int choice;
 		std::cin >> choice;
@@ -214,10 +269,17 @@ void Department::action() {
 			viewDepartment();
 			break;
 		case 5:
+			describeDepartment();
+			break;
+		case 6:
+			Database::getInstance().import_from_csv("Department", "Department.csv");
+			std::cout << "Department data restored from file\n";
+			break;
+		case 7:
 			flag = false;
 			break;
 		default:
-			std::cout << "Invalid choice. Please enter a number between 1 and 5.\n";
+			std::cout << "Invalid choice. Please enter a number between 1 and 7.\n";
 			break;
 		}
 	}

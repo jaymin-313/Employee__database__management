@@ -1,5 +1,6 @@
 #include "../include/Salary.h"
-
+#include "../include/log.h"
+using logs::Log;
 void Salary::setId() {
 	std::cout << "Enter Employee Id: ";
 	std::cin >> id;
@@ -91,6 +92,8 @@ void Salary::updateSalary() {
 		break;
 	default:
 		std::cout << "Invalid choice. Please enter a number between 1 and 4.\n";
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		updateSalary();
 		break;
 	}
@@ -137,6 +140,8 @@ void Salary::viewSalary() {
 		break;
 	default:
 		std::cout << "Invalid choice. Please enter a number between 1 and 3.\n";
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		viewSalary();
 		break;
 	}
@@ -146,7 +151,16 @@ void Salary::viewSalary() {
 	}
 
 };
+void Salary::describeSalary()
+{
 
+	if (!Database::getInstance().executeQueryCallback("pragma table_info('Salary');")) {
+		std::cout << Database::getInstance().getError();
+	}
+	else {
+		Log::getInstance().Info("Salary Described.");
+	}
+}
 
 void Salary::action() {
 	bool flag = true;
@@ -158,8 +172,10 @@ void Salary::action() {
 		std::cout << "2. Delete\n";
 		std::cout << "3. Update\n";
 		std::cout << "4. View\n";
-		std::cout << "5. Exit\n";
-		std::cout << "Enter your choice (1-5): ";
+		std::cout << "5. Describe\n";
+		std::cout << "6. Restore old data\n";
+		std::cout << "7. Exit\n";
+		std::cout << "Enter your choice (1-7): ";
 
 		int choice;
 		std::cin >> choice;
@@ -179,10 +195,19 @@ void Salary::action() {
 			viewSalary();
 			break;
 		case 5:
+			describeSalary();
+			break;
+		case 6:
+			Database::getInstance().import_from_csv("Salary", "Salary.csv");
+			std::cout << "salary data restored from file\n";
+			break;
+		case 7:
 			flag = false;
 			break;
 		default:
-			std::cout << "Invalid choice. Please enter a number between 1 and 5.\n";
+			std::cout << "Invalid choice. Please enter a number between 1 and 7.\n";
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			break;
 		}
 	}

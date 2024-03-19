@@ -1,0 +1,13 @@
+id,name,manager_id,description
+1,Engineering,1,Responsible for technical development
+2,Human Resources,2,Responsible for managing personnel
+3,Marketing,3,Responsible for promoting products
+4,Finance,4,Responsible for financial management
+5,Customer Service,5,Responsible for customer support
+6,Research and Development,6,Responsible for innovation and product development
+7,Sales,7,Responsible for sales and revenue generation
+8,Quality Assurance,8,Responsible for product quality testing
+9,Operations,9,Responsible for day-to-day operations
+10,Information Technology,10,Responsible for managing IT infrastructure
+11,Quality Assurance,8,Responsible for product quality testing
+

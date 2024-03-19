@@ -17,6 +17,8 @@ public:
 	void updateEngineer();
 	void viewEngineer();
 
+	void describeEngineer();
+
 	void action();
 
 

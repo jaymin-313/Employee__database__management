@@ -2,90 +2,155 @@
 #include "../include/Employee.h"
 #include "../include/database.h"
 #include "../include/validate.h"
-
+#include "../include/log.h"
+using logs::Log;
 void Employee::setId() {
-	std::cout << "ID: ";
-	std::cin >> id;
-}
-void Employee::setFirstname() {
-	std::cout << "First Name: ";
-	std::cin >> firstname;
-}
-void Employee::setLastname() {
-	std::cout << "Last Name: ";
-	std::cin >> lastname;
-}
-void Employee::setDob() {
-	std::cout << "Date of Birth (DD-MM-YYYY): ";
-	std::string inputDOB;
-	std::cin >> inputDOB;
-	if (!validateDateOfBirth(inputDOB)) {
-		std::cout << "Invalid Format !!, Enter again :\n";
-		Employee::setDob();
+	std::cout << "Enter Employee Id: ";
+	std::string inputValidate;
+	std::cin >> inputValidate;
+	if (validateNumeric(inputValidate)) {
+		id = std::stoi(inputValidate);
 	}
 	else {
-		dob = inputDOB;
+		std::cout << "Wrong Input!\n";
+		setId();
+	}
+}
+void Employee::setFirstname() {
+	std::cout << "Enter Employee First Name: ";
+
+	std::string inputValidate;
+	std::cin.ignore();
+	std::getline(std::cin, inputValidate);
+	if (validateAlphabetic(inputValidate)) {
+		firstname = inputValidate;
+	}
+	else {
+		std::cout << "Wrong Input!\n";
+		setFirstname();
+	}
+}
+void Employee::setLastname() {
+	std::cout << "Enter Employee Last Name: ";
+
+	std::string inputValidate;
+	std::cin.ignore();
+	std::getline(std::cin, inputValidate);
+	if (validateAlphabetic(inputValidate)) {
+		lastname = inputValidate;
+	}
+	else {
+		std::cout << "Wrong Input!\n";
+		setLastname();
+	}
+}
+void Employee::setDob() {
+	std::cout << " Enter Date of Birth (DD-MM-YYYY): ";
+	std::string inputValidate;
+	std::cin >> inputValidate;
+	if (validateDateOfBirth(inputValidate)) {
+		dob = inputValidate;
+	}
+	else {
+		std::cout << "Invalid Format !!, Enter again :\n";
+		setDob();
 	}
 }
 void Employee::setMobile() {
-	std::cout << "Mobile number : ";
-	std::string inputMob;
-	std::cin >> inputMob;
-	if (!validatePhoneNumber(inputMob)) {
-		std::cout << "Invalid Format !!, Enter again :\n";
-		Employee::setMobile();
+	std::cout << " Enter Mobile number : ";
+	std::string inputValidate;
+	std::cin >> inputValidate;
+	if (validatePhoneNumber(inputValidate)) {
+		mobile = inputValidate;
+		
 	}
 	else {
-		mobile = inputMob;
+		std::cout << "Invalid Format !!, Enter again :\n";
+		setMobile();
 	}
 }
 void Employee::setEmail() {
-	std::cout << "Email address : ";
-	std::string inputMail;
-	std::cin >> inputMail;
-	if (!validateEmail(inputMail)) {
-		std::cout << "Invalid Format !!, Enter again :\n";
-		Employee::setEmail();
+	std::cout << "Enter Email address : ";
+	std::string inputValidate;
+	std::cin >> inputValidate;
+	if (validateEmail(inputValidate)) {
+		email = inputValidate;
 	}
 	else {
-		email = inputMail;
+		std::cout << "Invalid Format !!, Enter again :\n";
+		setEmail();
 	}
 }
 void Employee::setAddress() {
-	std::cout << "Address: ";
+	std::cout << "Enter Address: ";
+	std::string inputValidate;
+
 	std::cin.ignore();
-	std::getline(std::cin, address);
+	std::getline(std::cin, inputValidate);
+	if (validateAlphaNumeric(inputValidate)) {
+		address = inputValidate;
+	}
+	else {
+		std::cout << "Wrong Input!\n";
+		setAddress();
+	}
 }
 void Employee::setGender() {
 	std::cout << "Gender (Male, Female, Other): ";
 	std::cin >> gender;
 }
 void Employee::setDoj() {
-	std::cout << "Date of Joining (DD-MM-YYYY): ";
-	std::string inputDOJ;
-	std::cin >> inputDOJ;
-	if (!validateDateOfBirth(inputDOJ)) {
-		std::cout << "Invalid Format !!, Enter again :\n";
-		Employee::setDoj();
+	std::cout << "Enter Date of Joining (DD-MM-YYYY): ";
+	std::string inputValidate;
+	std::cin >> inputValidate;
+	if (validateDateOfBirth(inputValidate)) {
+		doj = inputValidate;
 	}
 	else {
-		doj = inputDOJ;
+		std::cout << "Invalid Format !!, Enter again :\n";
+		setDoj();
 	}
 }
 void Employee::setWLocation() {
-	std::cout << "Work Location: ";
-	std::cin >> w_location;
+	std::cout << "Enter Work Location: ";
+	std::string inputValidate;
+	std::cin >> inputValidate;
+	if (validateAlphabetic(inputValidate)) {
+		w_location = inputValidate;
+	}
+	else {
+		std::cout << "Wrong Input!\n";
+		setWLocation();
+	}
 }
 void Employee::setManagerId() {
-	std::cout << "Manager ID: ";
-	std::cin >> manager_id;
+	std::cout << "Enter Manager ID: ";
+	std::string inputValidate;
+	std::cin >> inputValidate;
+	if (validateNumeric(inputValidate)) {
+		manager_id = std::stoi(inputValidate);
+	}
+	else {
+		std::cout << "Wrong Input!\n";
+		setManagerId();
+	}
 }
 void Employee::setDepartmentId() {
-	std::cout << "Department ID: ";
-	std::cin >> department_id;
+	std::cout << "Enter Department ID: ";
+	std::string inputValidate;
+	std::cin >> inputValidate;
+	if (validateNumeric(inputValidate)) {
+		department_id= std::stoi(inputValidate);
+	}
+	else {
+		std::cout << "Wrong Input!\n";
+		setDepartmentId();
+	}
 }
 
-void Employee::insertEmployee() {
+bool Employee::insertEmployee() {
+
+	system("cls");
 
 	std::cout << "Enter Employee Details:\n";
 
@@ -116,20 +181,16 @@ void Employee::insertEmployee() {
 		std::to_string(manager_id) + ", " +
 		std::to_string(department_id) + ");";
 
-	/*std::string insertQuery = "INSERT INTO Employee (id, firstname, lastname, dob, mobile, email, address, gender, doj, w_location, manager_id, department_id) VALUES"
-		"(4, 'Emily', 'Brown', '1987-04-25', '1112223333', 'emily.brown@example.com', '101 Pine St', 'Female', '2016-02-15', 'Office D', 3, 4), "
-		"(5, 'David', 'Wilson', '1993-09-30', '9998887777', 'david.wilson@example.com', '202 Maple St', 'Male', '2019-05-10', 'Office E', 4, 5), "
-		"(6, 'Sophia', 'Martinez', '1990-06-20', '3334445555', 'sophia.martinez@example.com', '303 Oak St', 'Female', '2014-07-01', 'Office F', 5, 6), "
-		"(7, 'James', 'Anderson', '1988-11-15', '7776665555', 'james.anderson@example.com', '404 Cedar St', 'Male', '2015-03-25', 'Office G', 6, 7), "
-		"(8, 'Olivia', 'Taylor', '1995-01-05', '5556667777', 'olivia.taylor@example.com', '505 Walnut St', 'Female', '2018-08-10', 'Office H', 7, 8), "
-		"(9, 'William', 'Thomas', '1986-07-10', '2223334444', 'william.thomas@example.com', '606 Birch St', 'Male', '2013-09-20', 'Office I', 8, 9), "
-		"(10, 'Ava', 'Hernandez', '1991-03-08', '8889990000', 'ava.hernandez@example.com', '707 Pine St', 'Female', '2017-11-05', 'Office J', 9, 10); ";*/
 
-	if (Database::getInstance().executeQuery(insertQuery))
-		std::cout << "Inserted Employee Succesfully ! \n";
-	else
-		std::cout << Database::getInstance().getError() << "\n";
-	
+	if (!Database::getInstance().executeQuery(insertQuery)) {
+		std::cout << Database::getInstance().getError() << "\n\n";
+		return false;
+	}
+	else {
+		Log::getInstance().Info("Employee Inserted for id : ", getId());
+	}
+	return true;
+
 };
 void Employee::deleteEmployeeById(int id) {
 
@@ -313,9 +374,22 @@ void Employee::viewEmployee() {
 	if (!Database::getInstance().executeQueryCallback(selectQuery)) {
 		std::cout << Database::getInstance().getError() << std::endl;
 	}
-
+	else {
+		Log::getInstance().Info(selectQuery, " : Executed.");
+	}
 };
 
+void Employee::describeEmployee()
+{
+
+	if (!Database::getInstance().executeQueryCallback("pragma table_info('Employee');")) {
+		std::cout << Database::getInstance().getError();
+	}
+	else {
+		Log::getInstance().Info("Employee Described.");
+	}
+
+}
 
 void Employee::action() {
 	bool flag = true;
@@ -330,8 +404,10 @@ void Employee::action() {
 		std::cout << "2. Delete\n";
 		std::cout << "3. Update\n";
 		std::cout << "4. View\n";
-		std::cout << "5. Exit\n";
-		std::cout << "Enter your choice (1-5): ";
+		std::cout << "5. Describe\n";
+		std::cout << "6. Restore old data\n";
+		std::cout << "7. Exit\n";
+		std::cout << "Enter your choice (1-7): ";
 
 		std::cin >> choice;
 		std::cout << "\n";
@@ -350,10 +426,17 @@ void Employee::action() {
 			viewEmployee();
 			break;
 		case 5:
+			describeEmployee();
+			break;
+		case 6:
+			Database::getInstance().import_from_csv("Employee", "Employee.csv");
+			std::cout << "Employee data restored from file\n";
+			break;
+		case 7:
 			flag = false;
 			break;
 		default:
-			std::cout << "Invalid choice. Please enter a number between 1 and 5.\n";
+			std::cout << "Invalid choice. Please enter a number between 1 and 7.\n";
 			break;
 		}
 	}

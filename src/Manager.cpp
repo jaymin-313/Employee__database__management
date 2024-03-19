@@ -1,6 +1,8 @@
 #include "../include/Manager.h"
 #include "../include/Employee.h"
+#include "../include/log.h"
 
+using logs::Log;
 void Manager::setManagementExperience() {
     std::cout << "Enter Manager Experience in years: ";
     std::cin >> management_experience;
@@ -12,28 +14,23 @@ void Manager::setProjectTitle() {
 }
 
 void Manager::insertManager() {
-    insertEmployee();
-    std::cout << "\nNow Enter Managing related details: ";
-    setManagementExperience();
-    setProjectTitle();
+    if (insertEmployee()) {
 
-    std::string insertQuery = "INSERT INTO Manager(id, management_experience , project_title) VALUES ("
-        + std::to_string(Employee::getId()) + ","
-        + std::to_string(management_experience) + ",'"
-        + project_title + "');";
-   /* std::string insertQuery = "INSERT INTO Manager (id, management_experience, project_title) VALUES ("
-        "4, 8, 'Finance Management Project'),"
-        "(5, 6, 'Customer Support Improvement Project'),"
-        "(6, 10, 'Product Innovation Project'),"
-        "(7, 9, 'Sales Strategy Project'), "
-        "(8, 9, 'Sales Strategy Project'),"
-        "(9, 9, 'Sales Strategy Project') ,"
-        "(10, 9, 'Sales Strategy Project') ";*/
-    //std::cout << insertQuery << '\n';
-    if (Database::getInstance().executeQuery(insertQuery))
-        std::cout << "Inserted Manager Succesfully ! \n\n";
-    else
-        std::cout << Database::getInstance().getError() << "\n";
+        setManagementExperience();
+        setProjectTitle();
+
+        std::string insertQuery = "INSERT INTO Manager(id, management_experience , project_title) VALUES ("
+            + std::to_string(Employee::getId()) + ","
+            + std::to_string(management_experience) + ",'"
+            + project_title + "');";
+
+        if (Database::getInstance().executeQuery(insertQuery)) {
+            std::cout << "Inserted Manager Succesfully ! \n\n";
+            Log::getInstance().Info("Manager Inserted for id : ", getId());
+        }
+        else
+            std::cout << Database::getInstance().getError() << "\n";
+    }
  
 };
 void Manager::deleteManager() {
@@ -90,6 +87,8 @@ void Manager::updateManager() {
             break;
         default:
             std::cout << "Invalid choice. Please enter a number between 1 and 4.\n";
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             updateManager();
             break;
         }
@@ -109,6 +108,8 @@ void Manager::updateManager() {
         break;
     default:
         std::cout << "Invalid choice Please Enter a number 1 or 2 only\n";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             break;
     }
 
@@ -141,6 +142,8 @@ void Manager::viewManager() {
         break;
     default:
         std::cout << "Invalid choice. Please enter a number between 1 and 3.\n";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         viewManager();
         break;
     }
@@ -149,7 +152,17 @@ void Manager::viewManager() {
         std::cout << Database::getInstance().getError() << std::endl;
     }
 };
+void Manager::describeManager()
+{
 
+    if (!Database::getInstance().executeQueryCallback("pragma table_info('Manager');")) {
+        std::cout << Database::getInstance().getError();
+    }
+    else {
+        Log::getInstance().Info("Manager Described.");
+    }
+
+}
 
 void Manager::action() {
     bool flag = true;
@@ -160,8 +173,9 @@ void Manager::action() {
     std::cout << "2. Delete\n";
     std::cout << "3. Update\n";
     std::cout << "4. View\n";
-    std::cout << "5. Exit\n";
-    std::cout << "Enter your choice (1-5): ";
+    std::cout << "5. Restore old data\n";
+    std::cout << "6. Exit\n";
+    std::cout << "Enter your choice (1-6): ";
     while (flag) {
         int choice;
         std::cin >> choice;
@@ -180,11 +194,20 @@ void Manager::action() {
         case 4:
             viewManager();
             break;
-        case 5: // Exit
+        case 5:
+            describeManager();
+            break;
+        case 6: 
+            Database::getInstance().import_from_csv("Manager", "Manager.csv");
+            std::cout << "Manager data restored from file\n";
+            break;
+        case 7: // Exit
             flag = false;
             break;
         default:
-            std::cerr << "Invalid choice. Please enter a number between 1 and 5.\n";
+            std::cerr << "Invalid choice. Please enter a number between 1 and 7.\n";
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             break;
         }
     }

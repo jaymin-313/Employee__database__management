@@ -3,6 +3,9 @@
 #include <vector>
 #include <iostream>
 #include <iomanip>
+#include <fstream>
+#include<filesystem>
+#include<sstream>
 
 int Database::rows = 0;
 bool Database::open(std::string db_name) {
@@ -20,6 +23,7 @@ bool Database::open(std::string db_name) {
     }
     else {
         setError("Failed to open database");
+        Log::getInstance().Error("Failed to open database.");
         return false;
     }
 }
@@ -149,6 +153,7 @@ void Database::close() {
         //std::cout << "sqlite3 closed\n";
         sqlite3_close(db);
         db = nullptr;
+        Log::getInstance().Info("Database Closed.");
     }
 }
 
@@ -160,6 +165,7 @@ bool Database::executeQuery(const std::string& query) {
 
     if (rc != SQLITE_OK) {
         setError(errMsg);
+        Log::getInstance().Error(errMsg);
         sqlite3_free(errMsg);
         return false;
     }
@@ -179,6 +185,7 @@ bool Database::executeQueryCallback(const std::string& query) {
     rows = 0;
     if (rc != SQLITE_OK) {
         setError(errMsg);
+        Log::getInstance().Error(errMsg);
         sqlite3_free(errMsg);
         return false;
     }
@@ -204,3 +211,90 @@ int Database::callback(void* data, int argc, char** argv, char** azColName) {
 void Database::setError(const std::string& errorMessage) {
     Error = errorMessage;
 }
+
+void Database::export_to_csv(const std::string& table, const std::string& filename) {
+    std::ofstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Failed to open file: " << filename << std::endl;
+        return;
+    }
+
+    std::string query = "SELECT * FROM " + table + ";";
+    if (!Database::getInstance().executeQuery(query)) {
+        std::cerr << "Failed to execute query." << std::endl;
+        return;
+    }
+
+    sqlite3_stmt* stmt = nullptr; // Initialize the sqlite3_stmt pointer
+    int rc = sqlite3_prepare_v2(db, query.c_str(), -1, &stmt, nullptr);
+    if (rc != SQLITE_OK) {
+        std::cerr << "Failed to prepare statement: " << sqlite3_errmsg(db) << std::endl;
+        return;
+    }
+
+    // Write header row
+    int columns = sqlite3_column_count(stmt);
+    for (int i = 0; i < columns; ++i) {
+        file << sqlite3_column_name(stmt, i);
+        if (i < columns - 1)
+            file << ",";
+    }
+    file << "\n";
+
+    // Write data rows
+    while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
+        for (int i = 0; i < columns; ++i) {
+            if (sqlite3_column_text(stmt, i)) {
+                file << sqlite3_column_text(stmt, i);
+            }
+            if (i < columns - 1)
+                file << ",";
+        }
+        file << "\n";
+    }
+
+    if (rc != SQLITE_DONE) {
+        std::cerr << "Error retrieving data: " << sqlite3_errmsg(db) << std::endl;
+    }
+    sqlite3_finalize(stmt);
+}
+
+bool Database::import_from_csv(const std::string& table, const std::string& filename) {
+
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Failed to open file: " << filename << std::endl;
+        return false;
+    }
+
+    std::string line, query;
+    std::getline(file, line);  //Skip header line
+
+    while (std::getline(file, line)) {
+        std::stringstream ss(line);
+        std::string value;
+        std::vector<std::string> values;
+
+        while (std::getline(ss, value, ',')) {
+            // Trim double quotes from the value
+            if (!value.empty() && value.front() == '"' && value.back() == '"') {
+                value = value.substr(1, value.size() - 2);
+            }
+            values.push_back(value);
+        }
+
+         //Construct the INSERT query
+        query = "INSERT INTO " + table + " VALUES (";
+        for (const auto& val : values) {
+            query += "'" + val + "',";
+        }
+        query.pop_back(); // Remove the trailing comma
+        query += ");";
+
+        if (!Database::getInstance().executeQuery(query)) {
+            // Handle insertion failure if needed
+        }
+    }
+    return true;
+}
+

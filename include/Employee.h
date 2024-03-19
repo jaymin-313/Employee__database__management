@@ -43,10 +43,12 @@ public:
     void setManagerId();
     void setDepartmentId();
 
-    void insertEmployee();
+    bool insertEmployee();
     void deleteEmployeeById(int id);
     void updateEmployee();
     void viewEmployee();
+
+    void describeEmployee();
 
     void action();
 

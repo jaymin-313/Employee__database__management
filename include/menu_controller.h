@@ -1,12 +1,12 @@
 #pragma once
 #include <iostream>
-#include "../include/database.h"
-#include "../include/Employee.h"
-#include "../include/Engineer.h"
-#include "../include/Manager.h"
-#include "../include/Salary.h"
-#include "../include/department.h"
-
+#include "database.h"
+#include "Employee.h"
+#include "Engineer.h"
+#include "Manager.h"
+#include "Salary.h"
+#include "department.h"
+#include<limits>
 void createTable() {
 	std::string createTableQuery = Database::getInstance().generateCreateTableQuery();
 	std::cout << createTableQuery << std::endl;
@@ -78,6 +78,8 @@ void manipulateDB() {
 			break;
 		default:
 			std::cerr << "Invalid choice. Please enter a number between 1 and 6.\n";
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			break;
 		}
 	}
@@ -113,6 +115,8 @@ void deleteTable() {
 		break;
 	default:
 		std::cout << "Enter 1 or 2 only!\n";
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		break;
 	}
 }
@@ -146,6 +150,8 @@ void runSql() {
 		break;
 	default:
 		std::cout << "Enter 1 or 2 only!\n";
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		break;
 	}
 }
@@ -163,8 +169,9 @@ void displayMenu() {
 		std::cout << "3. Manipulate Existing Database\n";
 		std::cout << "4. Delete Table\n";
 		std::cout << "5. Run SQL Query\n";
-		std::cout << "6. Exit\n";
-		std::cout << "Enter your choice (1-6): ";
+		std::cout << "6. Backup Existing DB\n";
+		std::cout << "7. Exit\n";
+		std::cout << "Enter your choice (1-7): ";
 
 		std::cin >> choice;
 		std::cout << '\n';
@@ -185,11 +192,20 @@ void displayMenu() {
 			runSql();
 		break;
 		case 6:
+			Database::getInstance().export_to_csv("Employee", "Employee.csv");
+			Database::getInstance().export_to_csv("Engineer", "Engineer.csv");
+			Database::getInstance().export_to_csv("Manager", "Manager.csv");
+			Database::getInstance().export_to_csv("Salary", "Salary.csv");
+			Database::getInstance().export_to_csv("Department", "Department.csv");
+			std::cout << "All Tables Backed up successfully.\n";
+			break;
+		case 7:
 			flag = false;
 			break;
 		default:
 			std::cerr << "Invalid choice. Please enter a number between 1 and 6.\n";
-			displayMenu();
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			break;
 		}
 	}
