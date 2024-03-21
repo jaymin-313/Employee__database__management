@@ -212,7 +212,7 @@ void Database::setError(const std::string& errorMessage) {
     Error = errorMessage;
 }
 
-void Database::export_to_csv(const std::string& table, const std::string& filename) {
+void Database::export_to_csv(const std::string& table, const std::filesystem::path& filename) {
     std::ofstream file(filename);
     if (!file.is_open()) {
         std::cerr << "Failed to open file: " << filename << std::endl;

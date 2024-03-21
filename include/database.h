@@ -25,7 +25,9 @@ public:
     std::string getError() const;
     void setError(const std::string& errorMessage);
 
-    void export_to_csv(const std::string& table, const std::string& filename);
+    void export_to_csv(const std::string& table, const std::filesystem::path& filename);
+
+
 
     bool import_from_csv(const std::string& table, const std::string& filename);
 

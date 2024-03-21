@@ -80,17 +80,11 @@
     <ClInclude Include="include\menu_controller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="pdflib.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\myexception.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
 </Project>

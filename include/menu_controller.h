@@ -7,6 +7,7 @@
 #include "Salary.h"
 #include "department.h"
 #include<limits>
+#include<filesystem>
 void createTable() {
 	std::string createTableQuery = Database::getInstance().generateCreateTableQuery();
 	std::cout << createTableQuery << std::endl;
@@ -192,11 +193,11 @@ void displayMenu() {
 			runSql();
 		break;
 		case 6:
-			Database::getInstance().export_to_csv("Employee", "Employee.csv");
-			Database::getInstance().export_to_csv("Engineer", "Engineer.csv");
-			Database::getInstance().export_to_csv("Manager", "Manager.csv");
-			Database::getInstance().export_to_csv("Salary", "Salary.csv");
-			Database::getInstance().export_to_csv("Department", "Department.csv");
+			Database::getInstance().export_to_csv("Employee", "backup/Employee.csv");
+			Database::getInstance().export_to_csv("Engineer", "backup/Engineer.csv");
+			Database::getInstance().export_to_csv("Manager", "backup/Manager.csv");
+			Database::getInstance().export_to_csv("Salary", "backup/Salary.csv");
+			Database::getInstance().export_to_csv("Department", "backup/Department.csv");
 			std::cout << "All Tables Backed up successfully.\n";
 			break;
 		case 7:
