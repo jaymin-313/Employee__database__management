@@ -33,7 +33,10 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\Zeel\source\repos\shahzealc\Employee-Management\Employee Management;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Employee Management;</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(SolutionDir)Employee Management;</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -61,12 +64,27 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>C:\Users\Zeel\source\repos\shahzealc\Employee-Management\bin-int\x64\Debug</AdditionalLibraryDirectories>
-      <AdditionalDependencies>C:\Users\Zeel\source\repos\shahzealc\Employee-Management\bin-int\x64\Debug\validate;C:\Users\Zeel\source\repos\shahzealc\Employee-Management\bin-int\x64\Debug\Employee;C:\Users\Zeel\source\repos\shahzealc\Employee-Management\bin-int\x64\Debug\Engineer;C:\Users\Zeel\source\repos\shahzealc\Employee-Management\bin-int\x64\Debug\database;C:\Users\Zeel\source\repos\shahzealc\Employee-Management\bin-int\x64\Debug\sqlite3;C:\Users\Zeel\source\repos\shahzealc\Employee-Management\bin-int\x64\Debug\Department;C:\Users\Zeel\source\repos\shahzealc\Employee-Management\bin-int\x64\Debug\Manager;C:\Users\Zeel\source\repos\shahzealc\Employee-Management\bin-int\x64\Debug\salary;C:\Users\Zeel\source\repos\shahzealc\Employee-Management\bin-int\x64\Debug\log;C:\Users\Zeel\source\repos\shahzealc\Employee-Management\bin-int\x64\Debug\departmentController;C:\Users\Zeel\source\repos\shahzealc\Employee-Management\bin-int\x64\Debug\managerController;C:\Users\Zeel\source\repos\shahzealc\Employee-Management\bin-int\x64\Debug\salaryController;C:\Users\Zeel\source\repos\shahzealc\Employee-Management\bin-int\x64\Debug\employeeController;C:\Users\Zeel\source\repos\shahzealc\Employee-Management\bin-int\x64\Debug\engineerController;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin-int\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SolutionDir)bin-int\$(Platform)\$(Configuration)\validate;
+$(SolutionDir)bin-int\$(Platform)\$(Configuration)\Employee;
+$(SolutionDir)bin-int\$(Platform)\$(Configuration)\Engineer;
+$(SolutionDir)bin-int\$(Platform)\$(Configuration)\database
+;$(SolutionDir)bin-int\$(Platform)\$(Configuration)\sqlite3
+;$(SolutionDir)bin-int\$(Platform)\$(Configuration)\Department
+;$(SolutionDir)bin-int\$(Platform)\$(Configuration)\Manager;
+$(SolutionDir)bin-int\$(Platform)\$(Configuration)\salary;
+$(SolutionDir)bin-int\$(Platform)\$(Configuration)\log;
+$(SolutionDir)bin-int\$(Platform)\$(Configuration)\departmentController;
+$(SolutionDir)bin-int\$(Platform)\$(Configuration)\managerController;
+$(SolutionDir)bin-int\$(Platform)\$(Configuration)\salaryController
+;$(SolutionDir)bin-int\$(Platform)\$(Configuration)\employeeController
+;$(SolutionDir)bin-int\$(Platform)\$(Configuration)\engineerController</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -93,12 +111,29 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin-int\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SolutionDir)bin-int\$(Platform)\$(Configuration)\validate;
+$(SolutionDir)bin-int\$(Platform)\$(Configuration)\Employee;
+$(SolutionDir)bin-int\$(Platform)\$(Configuration)\Engineer;
+$(SolutionDir)bin-int\$(Platform)\$(Configuration)\database
+;$(SolutionDir)bin-int\$(Platform)\$(Configuration)\sqlite3
+;$(SolutionDir)bin-int\$(Platform)\$(Configuration)\Department
+;$(SolutionDir)bin-int\$(Platform)\$(Configuration)\Manager;
+$(SolutionDir)bin-int\$(Platform)\$(Configuration)\salary;
+$(SolutionDir)bin-int\$(Platform)\$(Configuration)\log;
+$(SolutionDir)bin-int\$(Platform)\$(Configuration)\departmentController;
+$(SolutionDir)bin-int\$(Platform)\$(Configuration)\managerController;
+$(SolutionDir)bin-int\$(Platform)\$(Configuration)\salaryController
+;$(SolutionDir)bin-int\$(Platform)\$(Configuration)\employeeController
+;$(SolutionDir)bin-int\$(Platform)\$(Configuration)\engineerController</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
