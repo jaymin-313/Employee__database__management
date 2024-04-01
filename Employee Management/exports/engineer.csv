@@ -1,0 +1,7 @@
+id,firstname,lastname,dob,mobile,email,address,gender,doj,w_location,manager_id,department_id,programming_language,specialization
+9,William,Thomas,1986-07-10,2223334444,william.thomas@example.com,606 Birch St,Male,2013-09-20,Pune,8,4,Python, Java,Full Stack
+1,Harry,Potter,1990-05-15,1234567890,john.doe@example.com,123 Main St,Male,2015-01-10,Ahmedabad,2,1,c++,java,python,Backend development
+7,James,Anderson,1988-11-15,7776665555,james.anderson@example.com,404 Cedar St,Male,2015-03-25,Ahmedabad,6,3,C++,Backend development
+3,Henryyy,Johnson,1992-12-10,5551234567,michael.johnson@example.com,789 Oak St,Male,2017-06-05,Kolkata,4,2,Python,Data analysis
+5,David,Wilson,1993-09-30,9998887777,david.wilson@example.com,202 Maple St,Male,2019-05-10,Ahmedabad,4,2,C++,Python,Unreal Engine
+11,Kevin,hart,20-02-1997,8956895689,kevin@gmail.com,kevin address,Male,22-02-2014,ahm,2,1,eter,ertert
