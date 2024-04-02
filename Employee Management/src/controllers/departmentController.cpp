@@ -28,8 +28,12 @@ bool DepartmentController::deleteDepartmentController(Department& dept, std::str
 	if (attribute == "id") {
 		deleteQuery = "DELETE FROM Department WHERE id = " + std::to_string(dept.getId());
 	}
-	else {
+	else if(attribute == "name"){
 		deleteQuery = "DELETE FROM Department WHERE name = '" + dept.getName() + "'";
+	}
+	else {
+		std::cout << "Invalid attribute\n";
+		return false;
 	}
 
 	if (Database::getInstance().executeQuery(deleteQuery)) {
@@ -40,9 +44,9 @@ bool DepartmentController::deleteDepartmentController(Department& dept, std::str
 		if (changes != 0) {
 			std::cout << "\033[32mDepartment Deleted Succesfully ! \033[0m\n\n";
 			Log::getInstance().Info("Department Deleted for id : ", dept.getId());
-			return true;
+			
 		}
-
+		return true;
 	}
 	else {
 		std::cout << Database::getInstance().getError() << "\n";
@@ -70,8 +74,8 @@ bool DepartmentController::updateDepartmentController(Department& dept, std::str
 		if (changes != 0) {
 			std::cout << "\033[32mDepartment Updated Successfully ! \033[0m\n\n";
 			Log::getInstance().Info("Department Updated for id : ", dept.getId());
-			return true;
 		}
+		return true;
 	}
 	else {
 		std::cout << Database::getInstance().getError() << "\n";

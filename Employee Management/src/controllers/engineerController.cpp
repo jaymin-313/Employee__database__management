@@ -24,21 +24,21 @@ bool EngineerController::insertEngineerController(Engineer& engineer,Salary& sal
 };
 
 bool EngineerController::deleteEngineerController(Engineer& engineer, std::string attribute) {
+	if (attribute == "id") {
+		if (!EmployeeController::deleteEmployeeController(engineer, "id")) {
 
-	if (!EmployeeController::deleteEmployeeController(engineer, "id")) {
-		std::cout << Database::getInstance().getError() << "\n";
-		return false;
+			return false;
+		}
+
+		int changes = sqlite3_changes(Database::getInstance().db);
+
+		std::cout << "\033[32m" << changes << " row affected \033[0m\n\n";
+		if (changes != 0) {
+			std::cout << "\033[32mEngineer Deleted Successfully ! \033[0m\n\n";
+			Log::getInstance().Info("Engineer Deleted for id : ", engineer.getId());
+			return true;
+		}
 	}
-
-	int changes = sqlite3_changes(Database::getInstance().db);
-
-	std::cout << "\033[32m" << changes << " row affected \033[0m\n\n";
-	if (changes != 0) {
-		std::cout << "\033[32mEngineer Deleted Successfully ! \033[0m\n\n";
-		Log::getInstance().Info("Engineer Deleted for id : ", engineer.getId());
-		return true;
-	}
-
 	return false;
 }
 
@@ -61,9 +61,9 @@ bool EngineerController::updateEngineerController(Engineer& engineer, std::strin
 		if (changes != 0) {
 			std::cout << "\033[32mEngineer Updated Succesfully ! \033[0m\n\n";
 			Log::getInstance().Info("Engineer Updated for id : ", engineer.getId());
-			return true;
+			
 		}
-
+		return true;
 	}
 	else {
 		std::cout << Database::getInstance().getError() << "\n";

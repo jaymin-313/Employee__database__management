@@ -8,11 +8,12 @@ bool Manager::setManagementExperience() {
 }
 
 bool Manager::setProjectTitle() {
-	/*std::cout << "Enter Manager's Project Title: ";
+	std::cout << "Enter Manager's Project Title: ";
 	std::cin.ignore();
-	std::getline(std::cin, project_title);*/
-	bool result = setAttribute("Project Title", project_title, validateAlphabetic);
-	return result;
+	std::getline(std::cin, project_title);
+	return true;
+	/*bool result = setAttribute("Project Title", project_title, validateAlphabetic);
+	return result;*/
 
 }
 
@@ -21,54 +22,41 @@ bool Manager::insertManager() {
 		return false;
 	}
 	if (setManagementExperience() && setProjectTitle()) {
+		Salary s1;
+		auto s2 = s1.insertSalaryById(getId());
 
+		return ManagerController::insertManagerController(*this,s2);
 	}
-	else
-		return false;
-	
-	Salary s1;
-	auto s2 = s1.insertSalaryById(getId());
-
-	return ManagerController::insertManagerController(*this,s2);
+	EmployeeController::deleteEmployeeController(*this, "id");
+	return false;
 }
 
 bool Manager::deleteManager() {
-	setId();
-	std::string checkManager = "SELECT id FROM Manager WHERE id = " + std::to_string(getId());
-
-	if (!Database::getInstance().executeQueryRows(checkManager)) {
-		std::cout << Database::getInstance().getError() << std::endl;
+	if (!setId()) {
 		return false;
-	}
-
-	if (int rows = Database::getInstance().getRow(); rows > 0) {
-
-		std::string viewEmployee = "SELECT id,firstname,lastname,email FROM Employee WHERE id = " + std::to_string(getId());
-
-		if (!Database::getInstance().executeQueryCallback(viewEmployee, false)) {
-			std::cout << Database::getInstance().getError() << std::endl;
-			return false;
-		}
-
-		std::cout << "\033[36mEnter Y: to delete this Employee\nEnter N: to exit\033[0m\n";
-		char confirm;
-		std::cin >> confirm;
-
-		if (confirm == 'Y' || confirm == 'y') {
-			return ManagerController::deleteManagerController(*this, "id");
-		}
-
-		if (deleteEmployeeById(getId())) {
-			Log::getInstance().Info("Manager Deleted for id : ", getId());
-			return true;
-		}
-	}
-	else {
+	};
+	if (!Database::getInstance().checkExist("Manager", getId())) { 
 		std::cout << "\033[33mManager Not exist" << "\033[0m\n\n";
 		Log::getInstance().Warn("Manager Not exist for id : ", getId());
 		return false;
 	}
+	std::string viewEmployee = "SELECT id,firstname,lastname,email FROM Employee WHERE id = " + std::to_string(getId());
+
+	if (!Database::getInstance().executeQueryCallback(viewEmployee, false)) {
+		std::cout << Database::getInstance().getError() << std::endl;
+		return false;
+	}
+
+	std::cout << "\033[36mEnter Y: to delete this Employee\nEnter N: to exit\033[0m\n";
+	char confirm;
+	std::cin >> confirm;
+
+	if (confirm == 'Y' || confirm == 'y') {
+		return ManagerController::deleteManagerController(*this, "id");
+	}
+
 	return false;
+	
 }
 
 bool Manager::updateManager() {
@@ -111,7 +99,6 @@ bool Manager::updateManager() {
 			std::cout << "2. Project Title\n";
 			std::cout << "3. Go Back\n";
 			std::cout << "Enter your choice (1-3): ";
-			bool set;
 			std::cin >> choice;
 			std::cout << "\n";
 

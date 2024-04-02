@@ -79,7 +79,6 @@ void askPromptMain() {
 				if (Database::getInstance().exportDatabase()) {
 					std::cout << "All Tables Backed up successfully.\n";
 				}
-				//Database::getInstance().import_from_csv("Department", "backup/Department.csv");
 			}
 			}},
 	   {7, {"Exit", []() {system("cls"); }}}

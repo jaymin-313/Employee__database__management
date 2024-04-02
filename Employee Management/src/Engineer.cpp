@@ -5,20 +5,21 @@ using logs::Log;
 
 bool Engineer::setProgrammingLanguage()
 {
-	bool result = setAttribute("Programming Language", programming_language, validateAlphabetic);
-	return result;
+	/*bool result = setAttribute("Programming Language", programming_language, validateAlphabetic);
+	return result;*/
 	
-	//std::cout << "Enter  (seperated by comma if multiple) : ";
-	//std::cin.ignore();
-	//std::getline(std::cin, programming_language);
+	std::cout << "Enter Programming Language (seperated by space if multiple) : ";
+	std::cin.ignore();
+	std::getline(std::cin, programming_language);
+	return true;
 }
 
 bool Engineer::setSpecialization()
 {
 	bool result = setAttribute("Specialization", specialization, validateAlphabetic);
 	return result;
-	std::cout << "Enter Specialization : ";
-	std::cin >> specialization;
+	/*std::cout << "Enter Specialization : ";
+	std::cin >> specialization;*/
 }
 
 bool Engineer::insertEngineer() {
@@ -27,16 +28,13 @@ bool Engineer::insertEngineer() {
 		return false;
 	}
 	if (setProgrammingLanguage() && setSpecialization()) {
+		Salary s1;
+		auto s2 = s1.insertSalaryById(getId());
 
+		return EngineerController::insertEngineerController(*this, s2);
 	}
-	else
-		return false;
-	
-	Salary s1;
-	auto s2 = s1.insertSalaryById(getId());
-
-	return EngineerController::insertEngineerController(*this,s2);
-	
+	EmployeeController::deleteEmployeeController(*this, "id");
+	return false;
 };
 
 bool Engineer::deleteEngineer() {
@@ -44,39 +42,26 @@ bool Engineer::deleteEngineer() {
 	if (!setId()) {
 		return false;
 	};
-	std::string checkEngineer = "SELECT id FROM Engineer WHERE id = " + std::to_string(getId());
+	if (!Database::getInstance().checkExist("Engineer", getId())) { 
+		std::cout << "\033[33mEngineer Not exist\033[0m" << "\n\n";
+		Log::getInstance().Warn("Engineer not exist for id : ", getId());
+		return false;
+	}
 
-	if (!Database::getInstance().executeQueryRows(checkEngineer)) {
+	std::string viewEmployee = "SELECT id,firstname,lastname,email FROM Employee WHERE id = " + std::to_string(getId());
+	if (!Database::getInstance().executeQueryCallback(viewEmployee, false)) {
 		std::cout << Database::getInstance().getError() << std::endl;
 		return false;
 	}
 
-	if (int rows = Database::getInstance().getRow(); rows > 0) {
-		std::string viewEmployee = "SELECT id,firstname,lastname,email FROM Employee WHERE id = " + std::to_string(getId());
+	std::cout << "\033[36mEnter Y: to delete this Employee\nEnter N: to exit\033[0m\n";
+	char confirm;
+	std::cin >> confirm;
 
-		if (!Database::getInstance().executeQueryCallback(viewEmployee, false)) {
-			std::cout << Database::getInstance().getError() << std::endl;
-			return false;
-		}
-
-		std::cout << "\033[36mEnter Y: to delete this Employee\nEnter N: to exit\033[0m\n";
-		char confirm;
-		std::cin >> confirm;
-
-		if (confirm == 'Y' || confirm == 'y') {
-			return EngineerController::deleteEngineerController(*this, "id");
-		}
-
-
+	if (confirm == 'Y' || confirm == 'y') {
+		return EngineerController::deleteEngineerController(*this, "id");
 	}
-	else {
-
-		std::cout << "\033[33mEngineer Not exist\033[0m" << "\n\n";
-		Log::getInstance().Warn("Engineer not exist for id : ", getId());
-
-		return false;
-	}
-
+	return false;
 };
 
 bool Engineer::updateEngineer() {
@@ -120,7 +105,6 @@ bool Engineer::updateEngineer() {
 
 			std::cin >> choice;
 			std::cout << "\n";
-			bool set;
 			switch (choice) {
 			case 1:
 				if (!setProgrammingLanguage()) {
@@ -171,7 +155,6 @@ bool Engineer::viewEngineer() {
 		std::cout << "4. Go Back\n";
 
 		std::cout << "Enter your choice (1-4): ";
-		bool set;
 		std::cin >> choice;
 		std::cout << "\n";
 

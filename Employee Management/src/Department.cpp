@@ -23,6 +23,8 @@ bool Department::setManagerId() {
 bool Department::setDescription() {
 	bool result = setAttribute("Enter Department Description", description, validateAlphabetic);
 	return result;
+	std::cout << "Enter Department Description: ";
+	std::getline(std::cin, description);
 }
 
 bool Department::insertDepartment() {
@@ -38,12 +40,9 @@ bool Department::insertDepartment() {
 	
 	
 	if (setName() && setManagerId() && setDescription()) {
-
+		return DepartmentController::insertDepartmentController(*this);
 	}
-	else
 		return false;
-	return DepartmentController::insertDepartmentController(*this);
-
 }
 
 bool Department::deleteDepartment() {

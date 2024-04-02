@@ -35,11 +35,12 @@ bool Employee::setEmail() {
 }
 
 bool Employee::setAddress() {
-	/*std::cout << "Address: ";
+	std::cout << "Address: ";
 	std::cin.ignore();
-	std::getline(std::cin, address);*/
-    bool result = setAttribute("Address", address, validateAlphabetic);
-    return result;
+	std::getline(std::cin, address);
+    return true;
+    /*bool result = setAttribute("Address", address, validateAlphabetic);
+    return result;*/
 }
 
 bool Employee::setGender() {
@@ -77,7 +78,6 @@ bool Employee::setDepartmentId() {
 
 bool Employee::insertEmployee() {
 	system("cls");
-    bool set;
 	std::cout << "Enter Employee Details:\n";
 
     if (!setId()) {
@@ -89,12 +89,9 @@ bool Employee::insertEmployee() {
 	}
     if (setFirstname() && setLastname() && setDob() && setMobile() && setEmail() && setAddress()
         && setGender() && setDoj() && setWLocation() && setManagerId() && setDepartmentId()) {
+        return EmployeeController::insertEmployeeController(*this); 
     }
-    else
-        return false;
-
-    return EmployeeController::insertEmployeeController(*this); 
-
+    return false;
 }
 
 bool Employee::deleteEmployeeById(int eid) {
@@ -115,8 +112,7 @@ bool Employee::deleteEmployeeById(int eid) {
 	std::cin >> confirm;
 
 	if (confirm == 'Y' || confirm == 'y') {
-        if (EmployeeController::deleteEmployeeController(*this, "id"))
-            return true;
+        return EmployeeController::deleteEmployeeController(*this, "id");
 	}
     return false;
 };
@@ -240,59 +236,6 @@ bool Employee::updateEmployee() {
     return controllerResult;
 }
 
-//void Employee::viewEmployee() {
-//
-//    int choice;
-//    bool controllerResult;
-//    system("cls");
-//    bool flag = true;
-//    while (flag) {
-//        flag = false;
-//        std::cout << "Please select a column to view an employee:\n";
-//        std::cout << "1. ALL\n";
-//        std::cout << "2. ID\n";
-//        std::cout << "3. Firstname\n";
-//        std::cout << "4. Gmail\n";
-//        std::cout << "5. Go Back\n";
-//
-//        std::cout << "Enter your choice (1-5): ";
-//
-//        std::cin >> choice;
-//        std::cout << "\n";
-//
-//        switch (choice) {
-//        case 1:
-//            system("cls");
-//            controllerResult = EmployeeController::viewEmployeeController(*this, "ALL");
-//            break;
-//        case 2:
-//            system("cls");
-//            setId();
-//            controllerResult = EmployeeController::viewEmployeeController(*this, "ID");
-//            break;
-//        case 3:
-//            system("cls");
-//            setFirstname();
-//            controllerResult = EmployeeController::viewEmployeeController(*this, "Firstname");
-//            break;
-//        case 4:
-//            system("cls");
-//            setEmail();
-//            controllerResult = EmployeeController::viewEmployeeController(*this, "Email");
-//            break;
-//        case 5:
-//            system("cls");
-//            return;
-//        default:
-//            system("cls");
-//            std::cout << "Invalid choice. Please enter a number between 1 and 5.\n";
-//            flag = true;
-//            break;
-//        }
-//    }
-//
-//};
-
 void Employee::describeEmployee() const
 {
 
@@ -305,60 +248,3 @@ void Employee::describeEmployee() const
 
 }
 
-//void Employee::action() {
-//	bool flag = true;
-//
-//	int choice;
-//
-//
-//	while (flag) {
-//
-//
-//		std::cout << "Employee Table\n";
-//		std::cout << "Please select a value to perform actions:\n";
-//		std::cout << "1. Insert\n";
-//		std::cout << "2. Delete\n";
-//		std::cout << "3. Update\n";
-//		std::cout << "4. View\n";
-//		std::cout << "5. Describe\n";
-//		std::cout << "6. Go back\n";
-//		std::cout << "Enter your choice (1-6): ";
-//
-//		std::cin >> choice;
-//		std::cout << "\n";
-//
-//		switch (choice) {
-//		case 1:
-//			system("cls");
-//			insertEmployee();
-//			break;
-//		case 2:
-//			system("cls");
-//			setId();
-//			deleteEmployeeById(getId());
-//			break;
-//		case 3:
-//			system("cls");
-//			updateEmployee();
-//			break;
-//		case 4:
-//			system("cls");
-//			viewEmployee();
-//			break;
-//		case 5:
-//			system("cls");
-//			describeEmployee();
-//			break;
-//		case 6:
-//			system("cls");
-//			flag = false;
-//			break;
-//		default:
-//			system("cls");
-//			std::cout << "Invalid choice. Please enter a number between 1 and 6.\n";
-//			std::cin.clear();
-//			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-//			break;
-//		}
-//	}
-//}

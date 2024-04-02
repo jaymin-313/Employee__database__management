@@ -40,12 +40,12 @@ bool EmployeeController::deleteEmployeeController(Employee& employee, std::strin
 		if (changes != 0) {
 			std::cout << "\033[32mEmployee Deleted Succesfully ! \033[0m\n\n";
 			Log::getInstance().Info("Employee Deleted for id : ", employee.getId());
-			return true;
+			
 		}
-
+		return true;
 	}
 	else {
-		std::string_view errmsg = "FOREIGN KEY constraint failed";
+		std::string errmsg = std::string("\033[31m") + "FOREIGN KEY constraint failed" + "\033[0m";
 		if (Database::getInstance().getError() == errmsg) {
 			std::string err = { "Selected Employee is managing different employees, so you can not directly delete this employee !!! " };
 			Database::getInstance().setError(err);

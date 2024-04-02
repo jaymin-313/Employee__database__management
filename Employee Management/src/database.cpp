@@ -208,7 +208,6 @@ void Database::setError(std::string& errorMessage) {
 }
 
 void Database::createTableQuery() {
-
 	std::string tableName;
 	std::cout << "Enter table name: ";
 	std::cin >> tableName;
@@ -224,7 +223,7 @@ void Database::createTableQuery() {
 		std::cout << "Enter column type: ";
 		std::cin >> columnType;
 
-		std::cout << "Enter column constraints : ";
+		std::cout << "Enter column constraints (e.g., PRIMARY KEY, UNIQUE, NOT NULL, etc.): ";
 		std::cin.ignore();
 		std::getline(std::cin, constraints);
 
@@ -234,6 +233,23 @@ void Database::createTableQuery() {
 		std::cin >> choice;
 	} while (choice == 'y' || choice == 'Y');
 
+	char fkChoice;
+	do {
+		std::string columnName, refTable, refColumn;
+		std::cout << "Enter column name for foreign key: ";
+		std::cin >> columnName;
+		std::cout << "Enter referenced table name: ";
+		std::cin >> refTable;
+		std::cout << "Enter referenced column name: ";
+		std::cin >> refColumn;
+
+		std::string fkConstraint = "FOREIGN KEY (" + columnName + ") REFERENCES " + refTable + "(" + refColumn + ")";
+		columns.push_back(fkConstraint);
+
+		std::cout << "Add another foreign key? (y/n): ";
+		std::cin >> fkChoice;
+	} while (fkChoice == 'y' || fkChoice == 'Y');
+
 	for (int i = 0; i < columns.size(); ++i) {
 		sql += columns[i];
 		if (i < columns.size() - 1) {
@@ -241,12 +257,12 @@ void Database::createTableQuery() {
 		}
 	}
 	sql += ");";
-
+	/*std::cout << sql << std::endl;*/
 	if (executeQuery(sql)) {
-		Log::getInstance().Info(tableName, " created.");
+		Log::getInstance().Info(tableName + " created.");
 	}
-
 }
+
 
 void Database::showTables(){
 
@@ -423,51 +439,4 @@ bool Database::checkExist(std::string table, int id) {
 	return true;
 }
 
-bool Database::import_from_csv(const std::string& table, const std::string& filename) {
 
-	std::string deleteQuery = "DELETE FROM " + table + ";";
-
-	if (executeQuery(deleteQuery)) {
-		std::cout << "Table Deleted Succesfully ! \n\n";
-		Log::getInstance().Info(table, " Deleted.");
-	}
-	else
-		std::cout << Database::getInstance().getError() << "\n\n";
-
-	std::ifstream file(filename);
-	if (!file.is_open()) {
-		std::cerr << "Failed to open file: " << filename << std::endl;
-		return false;
-	}
-
-	std::string line, query;
-	std::getline(file, line); // Skip header line
-
-	while (std::getline(file, line)) {
-		std::stringstream ss(line);
-		std::string value;
-		std::vector<std::string> values;
-
-		while (std::getline(ss, value, ',')) {
-			// Trim double quotes from the value
-			if (!value.empty() && value.front() == '"' && value.back() == '"') {
-				value = value.substr(1, value.size() - 2);
-			}
-			values.push_back(value);
-		}
-
-		// Construct the INSERT query
-		query = "INSERT INTO " + table + " VALUES (";
-		for (const auto& val : values) {
-			query += "'" + val + "',";
-		}
-		query.pop_back(); // Remove the trailing comma
-		query += ");";
-
-		if (!Database::getInstance().executeQuery(query)) {
-			// Handle insertion failure if needed
-		}
-	}
-
-	return true;
-}

@@ -740,3 +740,25 @@
 [ 01-04-2024 15:05:25 ][Info ]: admin signed in. 
 [ 01-04-2024 15:05:25 ][Info ]: Database Opened. 
 [ 01-04-2024 15:05:27 ][Info ]: Database Closed. 
+[ 02-04-2024 14:57:23 ][Info ]: admin signed in. 
+[ 02-04-2024 14:57:23 ][Info ]: Database Opened. 
+[ 02-04-2024 14:58:30 ][Info ]: Database Closed. 
+[ 02-04-2024 15:43:05 ][Warn ]: 1 attempt 
+[ 02-04-2024 15:43:10 ][Warn ]: 2 attempt 
+[ 02-04-2024 15:43:13 ][Warn ]: 3 attempt 
+[ 02-04-2024 15:43:13 ][Error]: Maximum number of attempts reached for :  admin 
+[ 02-04-2024 15:43:20 ][Info ]: admin signed in. 
+[ 02-04-2024 15:43:20 ][Info ]: Database Opened. 
+[ 02-04-2024 15:43:31 ][Info ]: Department Viewed for all :  0 
+[ 02-04-2024 15:43:40 ][Info ]: Department Described. 
+[ 02-04-2024 15:43:48 ][Info ]: Database Closed. 
+[ 02-04-2024 17:40:51 ][Warn ]: 1 attempt 
+[ 02-04-2024 17:40:56 ][Info ]: admin signed in. 
+[ 02-04-2024 17:40:56 ][Info ]: Database Opened. 
+[ 02-04-2024 17:41:06 ][Warn ]: Engineer not exist for id :  17 
+[ 02-04-2024 17:41:25 ][Info ]: Employee Deleted for id :  15 
+[ 02-04-2024 17:41:25 ][Info ]: Engineer Deleted for id :  15 
+[ 02-04-2024 17:41:33 ][Info ]: Database Closed. 
+[ 02-04-2024 18:32:33 ][Info ]: admin signed in. 
+[ 02-04-2024 18:32:33 ][Info ]: Database Opened. 
+[ 02-04-2024 18:32:34 ][Info ]: Database Closed. 

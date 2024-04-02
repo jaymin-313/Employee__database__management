@@ -48,13 +48,13 @@ namespace Auth {
 			}
 			else {
 				tryCount++;
-				std::cout << "Wrong Credentials!\n";
+				std::cout << "Wrong Credentials!\n\n";
 				Log::getInstance().Warn(tryCount, "attempt");
 			}
 		}
 
 		if (tryCount == 3) {
-			std::cout << "Maximum number of attempts reached!\n";
+			std::cout << "Maximum number of attempts reached!\n\n";
 			Log::getInstance().Error("Maximum number of attempts reached for : ", username);
 		}
 		return false;

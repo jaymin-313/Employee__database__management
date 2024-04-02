@@ -280,3 +280,445 @@
 [ 01-04-2024 16:39:24 ][Info ]: Manager Deleted for id :  1001 
 [ 01-04-2024 16:39:24 ][Info ]: Salary Updated for id :  1 
 [ 01-04-2024 16:39:24 ][Info ]: Salary Incremented for id :  1 
+[ 01-04-2024 16:54:53 ][Info ]: Department Inserted for id :  10 
+[ 01-04-2024 16:54:53 ][Info ]: Department Updated for id :  10 
+[ 01-04-2024 16:54:53 ][Info ]: Department Deleted for id :  10 
+[ 01-04-2024 16:54:54 ][Info ]: Employee Updated for id :  1001 
+[ 01-04-2024 16:54:54 ][Info ]: Employee Deleted for id :  1001 
+[ 01-04-2024 16:54:54 ][Info ]: Engineer Inserted for id :  1001 
+[ 01-04-2024 16:54:54 ][Info ]: Engineer Updated for id :  1001 
+[ 01-04-2024 16:54:54 ][Info ]: Employee Deleted for id :  1001 
+[ 01-04-2024 16:54:54 ][Info ]: Engineer Deleted for id :  1001 
+[ 01-04-2024 16:54:54 ][Info ]: Manager Inserted for id :  1001 
+[ 01-04-2024 16:54:54 ][Info ]: Manager Updated for id :  1001 
+[ 01-04-2024 16:54:54 ][Info ]: Employee Deleted for id :  1001 
+[ 01-04-2024 16:54:54 ][Info ]: Manager Deleted for id :  1001 
+[ 01-04-2024 16:54:54 ][Info ]: Salary Updated for id :  1 
+[ 01-04-2024 16:54:54 ][Info ]: Salary Incremented for id :  1 
+[ 01-04-2024 17:05:31 ][Info ]: Department Inserted for id :  10 
+[ 01-04-2024 17:05:31 ][Info ]: Department Updated for id :  10 
+[ 01-04-2024 17:05:31 ][Info ]: Department Deleted for id :  10 
+[ 01-04-2024 17:05:31 ][Info ]: Employee Updated for id :  1001 
+[ 01-04-2024 17:05:31 ][Info ]: Employee Deleted for id :  1001 
+[ 01-04-2024 17:05:31 ][Info ]: Engineer Inserted for id :  1001 
+[ 01-04-2024 17:05:31 ][Info ]: Engineer Updated for id :  1001 
+[ 01-04-2024 17:05:31 ][Info ]: Employee Deleted for id :  1001 
+[ 01-04-2024 17:05:31 ][Info ]: Engineer Deleted for id :  1001 
+[ 01-04-2024 17:05:31 ][Info ]: Manager Inserted for id :  1001 
+[ 01-04-2024 17:05:31 ][Info ]: Manager Updated for id :  1001 
+[ 01-04-2024 17:05:31 ][Info ]: Employee Deleted for id :  1001 
+[ 01-04-2024 17:05:31 ][Info ]: Manager Deleted for id :  1001 
+[ 01-04-2024 17:05:31 ][Info ]: Salary Updated for id :  1 
+[ 01-04-2024 17:05:31 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 10:01:08 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 10:01:08 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 10:01:08 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 10:01:08 ][Info ]: Employee Updated for id :  1001 
+[ 02-04-2024 10:01:08 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 10:01:08 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 10:01:08 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 10:01:08 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 10:01:08 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 10:01:09 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 10:01:09 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 10:01:09 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 10:01:09 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 10:01:09 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 10:01:09 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:20:51 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:20:51 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:20:51 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:20:51 ][Info ]: Employee Updated for id :  1001 
+[ 02-04-2024 14:20:51 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:20:51 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:20:51 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:20:51 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:20:51 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:20:51 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:20:51 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:20:52 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:20:52 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:20:52 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:20:52 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:24:17 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:24:17 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:24:17 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:24:17 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 14:24:17 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 14:24:17 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:24:17 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:24:17 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:24:17 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:24:17 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:24:17 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:24:17 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:24:17 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:24:17 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:24:17 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:25:50 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:25:50 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:25:50 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:25:50 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 14:25:50 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 14:25:50 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:25:50 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:25:50 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:25:50 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:25:50 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:25:50 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:25:50 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:25:50 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:25:50 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:25:50 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:28:26 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:28:26 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:28:27 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:28:27 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 14:28:27 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 14:28:27 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:28:27 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:28:27 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:28:27 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:28:27 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:28:27 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:28:27 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:28:27 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:28:27 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:28:27 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:28:36 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:28:36 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:28:36 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:28:36 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 14:28:36 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 14:28:36 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:28:36 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:28:36 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:28:36 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:28:36 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:28:36 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:28:36 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:28:36 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:28:36 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:28:36 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:30:57 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:30:57 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:30:57 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:30:57 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:30:57 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 14:30:57 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 14:30:57 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:30:57 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:30:57 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:30:57 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:30:57 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:30:57 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:30:57 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:30:57 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:30:57 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:30:57 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:32:43 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:32:43 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:32:43 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:32:43 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:32:43 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 14:32:43 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:32:43 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 14:32:43 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:32:43 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:32:43 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:32:43 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:32:43 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:32:43 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:32:43 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:32:43 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:32:43 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:32:43 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:33:26 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:33:26 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:33:26 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:33:26 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:33:26 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 14:33:26 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:33:27 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 14:33:27 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:33:27 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:33:27 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:33:27 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:33:27 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:33:27 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:33:27 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:33:27 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:33:27 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:33:27 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:34:37 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:34:37 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:34:37 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:34:37 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:34:37 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 14:34:37 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:34:37 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 14:34:37 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:34:37 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:34:37 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:34:37 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:34:37 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:34:37 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:34:37 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:34:37 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:34:37 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:34:37 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:36:30 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:36:30 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:36:30 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:36:30 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:36:30 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 14:36:30 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:36:30 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 14:36:30 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:36:30 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:36:30 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:36:30 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:36:30 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:36:30 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:36:30 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:36:30 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:36:30 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:36:30 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:37:48 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:37:48 ][Error]: UNIQUE constraint failed: Department.id 
+[ 02-04-2024 14:37:48 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:37:48 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:37:48 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:37:48 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:37:48 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 14:37:48 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:37:48 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 14:37:48 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:37:48 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:37:48 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:37:48 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:37:48 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:37:48 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:37:48 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:37:48 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:37:48 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:37:48 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:38:04 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:38:04 ][Error]: UNIQUE constraint failed: Department.id 
+[ 02-04-2024 14:38:04 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:38:04 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:38:04 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:38:15 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:38:15 ][Error]: UNIQUE constraint failed: Department.id 
+[ 02-04-2024 14:38:15 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:38:15 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:38:15 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:39:44 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:39:44 ][Error]: UNIQUE constraint failed: Department.id 
+[ 02-04-2024 14:39:44 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:39:44 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:39:44 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:39:44 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:39:44 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 14:39:44 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:39:44 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 14:39:44 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:39:44 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:39:44 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:39:44 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:39:44 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:39:44 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:39:44 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:39:44 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:39:44 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:39:45 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:42:13 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:42:13 ][Error]: UNIQUE constraint failed: Department.id 
+[ 02-04-2024 14:42:13 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:42:13 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:42:13 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:42:13 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:42:13 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 14:42:13 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:42:13 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 14:42:13 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:42:13 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:42:13 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:42:13 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:42:13 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:42:13 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:42:13 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:42:13 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:42:13 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:42:13 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:44:55 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:44:55 ][Error]: UNIQUE constraint failed: Department.id 
+[ 02-04-2024 14:44:55 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:44:55 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:44:55 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:44:55 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:44:55 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 14:44:55 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:44:55 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 14:44:55 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:44:55 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:44:55 ][Error]: UNIQUE constraint failed: Engineer.id 
+[ 02-04-2024 14:44:55 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:44:55 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:44:55 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:44:55 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:44:55 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:44:55 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:44:55 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:44:55 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:44:55 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:44:55 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:48:23 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:48:23 ][Error]: UNIQUE constraint failed: Department.id 
+[ 02-04-2024 14:48:23 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:48:23 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:48:23 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:48:23 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:48:23 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 14:48:23 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:48:23 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 14:48:23 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:48:23 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:48:23 ][Error]: UNIQUE constraint failed: Engineer.id 
+[ 02-04-2024 14:48:23 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:48:23 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:48:23 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:48:23 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:48:23 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:48:23 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:48:23 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:48:23 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:48:23 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:48:23 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:48:23 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:48:23 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:51:09 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:51:09 ][Error]: UNIQUE constraint failed: Department.id 
+[ 02-04-2024 14:51:09 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:51:09 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:51:09 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:51:09 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:51:09 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 14:51:09 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:51:09 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 14:51:09 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:51:09 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:51:09 ][Error]: UNIQUE constraint failed: Engineer.id 
+[ 02-04-2024 14:51:09 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:51:09 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:51:09 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:51:09 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:51:09 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:51:09 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:51:09 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:51:09 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:51:09 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:51:09 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:51:09 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:51:09 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:51:09 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:56:59 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:56:59 ][Error]: UNIQUE constraint failed: Department.id 
+[ 02-04-2024 14:56:59 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:56:59 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:56:59 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:56:59 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:56:59 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 14:56:59 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:56:59 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 14:56:59 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:56:59 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:56:59 ][Error]: UNIQUE constraint failed: Engineer.id 
+[ 02-04-2024 14:56:59 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:56:59 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:56:59 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:56:59 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:56:59 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:56:59 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:56:59 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:56:59 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:56:59 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:56:59 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:56:59 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:56:59 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:56:59 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:57:06 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:57:06 ][Error]: UNIQUE constraint failed: Department.id 
+[ 02-04-2024 14:57:06 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:57:06 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:57:06 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:57:06 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:57:06 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 14:57:06 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:57:06 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 14:57:06 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:57:06 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:57:06 ][Error]: UNIQUE constraint failed: Engineer.id 
+[ 02-04-2024 14:57:06 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:57:06 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:57:06 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:57:06 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:57:06 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:57:06 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:57:06 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:57:06 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:57:06 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:57:06 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:57:06 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:57:06 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:57:06 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 14:57:10 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 14:57:10 ][Error]: UNIQUE constraint failed: Department.id 
+[ 02-04-2024 14:57:10 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 14:57:10 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:57:10 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 14:57:10 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:57:10 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 14:57:10 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:57:10 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 14:57:10 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:57:10 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 14:57:10 ][Error]: UNIQUE constraint failed: Engineer.id 
+[ 02-04-2024 14:57:10 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 14:57:10 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:57:10 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:57:10 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 14:57:10 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 14:57:10 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 14:57:10 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 14:57:10 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:57:10 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 14:57:10 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 14:57:10 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 14:57:10 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 14:57:10 ][Info ]: Salary Incremented for id :  1 
+[ 02-04-2024 18:32:05 ][Info ]: Department Inserted for id :  10 
+[ 02-04-2024 18:32:05 ][Error]: UNIQUE constraint failed: Department.id 
+[ 02-04-2024 18:32:05 ][Info ]: Department Updated for id :  10 
+[ 02-04-2024 18:32:05 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 18:32:05 ][Info ]: Department Deleted for id :  10 
+[ 02-04-2024 18:32:05 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 18:32:05 ][Info ]: Employee Updated for id :  100 
+[ 02-04-2024 18:32:05 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 18:32:05 ][Info ]: Employee Deleted for id :  100 
+[ 02-04-2024 18:32:05 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 18:32:05 ][Info ]: Engineer Inserted for id :  1001 
+[ 02-04-2024 18:32:05 ][Error]: UNIQUE constraint failed: Engineer.id 
+[ 02-04-2024 18:32:05 ][Info ]: Engineer Updated for id :  1001 
+[ 02-04-2024 18:32:05 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 18:32:05 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 18:32:05 ][Info ]: Engineer Deleted for id :  1001 
+[ 02-04-2024 18:32:05 ][Error]: UNIQUE constraint failed: Employee.id 
+[ 02-04-2024 18:32:05 ][Info ]: Manager Inserted for id :  1001 
+[ 02-04-2024 18:32:05 ][Info ]: Manager Updated for id :  1001 
+[ 02-04-2024 18:32:05 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 18:32:05 ][Info ]: Employee Deleted for id :  1001 
+[ 02-04-2024 18:32:05 ][Info ]: Manager Deleted for id :  1001 
+[ 02-04-2024 18:32:05 ][Info ]: Salary Updated for id :  1 
+[ 02-04-2024 18:32:05 ][Error]: near "WHERE": syntax error 
+[ 02-04-2024 18:32:05 ][Info ]: Salary Incremented for id :  1 

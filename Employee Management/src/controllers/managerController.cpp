@@ -23,9 +23,8 @@ bool ManagerController::insertManagerController(Manager& manager,Salary& salary)
 }
 
 bool ManagerController::deleteManagerController(Manager& manager, std::string attribute) {
-   
+    if (attribute == "id") {
         if (!EmployeeController::deleteEmployeeController(manager, "id")) {
-            std::cout << Database::getInstance().getError() << "\n";
             return false;
         }
 
@@ -37,7 +36,7 @@ bool ManagerController::deleteManagerController(Manager& manager, std::string at
             Log::getInstance().Info("Manager Deleted for id : ", manager.getId());
             return true;
         }
-
+    }
     return false;
 }
 
@@ -58,8 +57,8 @@ bool ManagerController::updateManagerController(Manager& manager, std::string at
         if (changes != 0) {
             std::cout << "\033[32mManager Updated Successfully ! \033[0m\n\n";
             Log::getInstance().Info("Manager Updated for id : ", manager.getId());
-            return true;
         }
+        return true;
     }
     else {
         std::cout << Database::getInstance().getError() << "\n";

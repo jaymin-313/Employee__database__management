@@ -27,10 +27,8 @@ bool Salary::setPercentage() {
 Salary Salary::insertSalaryById(int eid) {
 	id = eid;
 	if (setBaseSalary() && setBonus()) {
-
-	}
-	else
 		return *this;
+	}
 	return *this;
 };
 
@@ -62,7 +60,6 @@ bool Salary::updateSalary() {
 	bool flag = true;
 	while (flag) {
 		flag = false;
-		bool set;
 		std::cout << "Please select an attribute to update:\n";
 		std::cout << "1. Base Salary\n";
 		std::cout << "2. Bonus\n";
@@ -135,7 +132,6 @@ bool Salary::viewSalary() {
 
 		std::cin >> choice;
 		std::cout << "\n";
-		bool set;
 		switch (choice) {
 		case 1:
 			system("cls");
