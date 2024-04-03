@@ -1,0 +1,6 @@
+id,name,manager_id,description
+1,Finance,2,Responsible for financial management
+2,Development,4,Responsible for Development
+3,QA,6,Responsible for product quality testing
+4,IT Admin,8,Responsible for managing IT infrastructure
+5,updatetest,1,testtttt

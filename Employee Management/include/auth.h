@@ -33,6 +33,7 @@ namespace Auth {
 	[[nodiscard]] bool authUser() {
 
 		std::cout << "--------------------Welcome To Employee Database Management System---------------------" << std::endl;
+		std::cout << "-------------------------  username = admin   password = admin ------------------------" << std::endl;
 		std::string username, password;
 		int tryCount = 0;
 

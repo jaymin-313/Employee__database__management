@@ -1,0 +1,11 @@
+id,name,manager_id,description
+0,,,new
+1,Finance,2,Responsible for financial management
+2,Development,4,Responsible for Development
+3,QA,6,Responsible for product quality testing
+4,IT Admin,8,Responsible for managing IT infrastructure
+5,test,3,new
+6,new,2,tst
+7,afterset,,good
+8,test,,newtest
+13,new,,test
